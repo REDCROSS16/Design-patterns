@@ -1,0 +1,12 @@
+<?php 
+
+namespace DesignPatterns\Creational\Builder\Parts;
+/**
+ * Основной абстрактный класс транспорта
+ */
+abstract class Vehicle 
+{
+    public function setPart(string $element, object $value) {
+
+    }
+}
