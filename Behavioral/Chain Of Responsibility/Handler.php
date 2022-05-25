@@ -12,6 +12,10 @@ abstract class Handler
     {
         $processed = $this->processing($request);
 
-        if ($processed === null && $this->successor)
+        if ($processed === null && $this->successor) {
+            $processed = $this->successor->handle($request);
+        }
+
+        return $processed;
     }
 }
