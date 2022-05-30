@@ -9,5 +9,8 @@ class Book
 
     }
 
-    
+    public function getAuthor(): string
+    {
+
+    }
 }
