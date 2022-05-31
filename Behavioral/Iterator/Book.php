@@ -11,6 +11,11 @@ class Book
 
     public function getAuthor(): string
     {
+        return $this->author;
+    }
 
+    public function getTitle(): string
+    {
+        return $this->title;
     }
 }
