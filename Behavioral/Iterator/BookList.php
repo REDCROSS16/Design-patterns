@@ -1,7 +1,9 @@
 <?php
 
 namespace DesignPatterns\Behavioral\Iterator;
+
 use Countable;
+use Iterator;
 
 class BookList implements Countable, Iterator
 {
@@ -21,9 +23,36 @@ class BookList implements Countable, Iterator
             } 
         }
 
-        $this->books = array_values($this->books);
-         
+        $this->books = array_values($this->books);  
     }
 
+    public function count(): int
+    {
+        return count($this->books);
+    }
 
+    public function current(): Book
+    {
+        return $this->books[$this->currentIndex];
+    }
+
+    public function key(): int
+    {
+        return $this->currentIndex;
+    }
+
+    public function next()
+    {
+        $this->currentIndex++;
+    }
+
+    public function rewind()
+    {
+        $this->currentIndex = 0;
+    }
+
+    public function valid(): bool
+    {
+        return isset($this->books[$this->currentIndex]);
+    }
 }
