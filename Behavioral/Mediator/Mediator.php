@@ -1,6 +1,8 @@
 <?php
 
+namespace DesignPatterns\Behavioral\Mediator;
+
 interface Mediator 
 {
-    public function getUser(int $id): string;
+    public function getUser(int $username): string;
 }
