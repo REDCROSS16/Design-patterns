@@ -1,4 +1,5 @@
 <?php
+namespace DesignPatterns\Behavioral\Mediator;
 
 use DesignPatterns\Behavioral\Mediator\Mediator;
 
