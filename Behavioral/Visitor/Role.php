@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\Behavioral\Visitor;
 
-class Role 
+interface Role 
 {
-
+    public function accept(RoleVisitor $visitor);
 }
