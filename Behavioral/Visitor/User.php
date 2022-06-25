@@ -8,5 +8,8 @@ class User implements Role
     {
     }
 
-    
+    public function getName(): string 
+    {
+        
+    }
 }
