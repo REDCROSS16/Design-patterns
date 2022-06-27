@@ -10,6 +10,11 @@ class User implements Role
 
     public function getName(): string 
     {
-        
+        return sprintf('User %s', $this->name);
+    }
+
+    public function accept(RoleVisitor $visitor)
+    {
+        $visitor->visitUser($this);
     }
 }
