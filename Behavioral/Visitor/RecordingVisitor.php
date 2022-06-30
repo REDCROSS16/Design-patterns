@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\Behavioral\Visitor;
 
-class Recording implements RoleVisitor
+class RecordingVisitor implements RoleVisitor
 {
     private array $visited = [];
 
