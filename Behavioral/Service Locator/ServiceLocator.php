@@ -17,4 +17,9 @@ class ServiceLocator
     {
         $this->services[$class] = $params;
     }
+
+    public function has(string $interface): bool
+    {
+        return isset($this->services[$interface]) || isset($this->instantied[$interface]);
+    }
 }
