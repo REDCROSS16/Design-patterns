@@ -17,5 +17,6 @@ class ServiceLocatorTest extends TestCase
         $this->serviceLocator->addInstance(LogService::class, new LogService());
 
         $this->assertTrue($this->serviceLocator->has(LogService::class));
+        $this->assertFalse($this->serviceLocator->has(self::class));
     }
 }
