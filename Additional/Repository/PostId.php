@@ -2,6 +2,8 @@
 
 namespace DesignPatterns\Additional\Repository;
 
+use InvalidArgumentException;
+
 class PostId 
 {
     public static function fromInt(int $id): PostId
@@ -13,5 +15,18 @@ class PostId
     private function __construct(private int $id)
     {
         
+    }
+
+
+    public function toInt(): int
+    {
+        return $this->id;
+    }
+
+    private static function ensureIsValid(int $id)
+    {
+        if ($id < 0) {
+            throw new InvalidArgumentException('Invalid PostId given');
+        }
     }
 }
