@@ -29,5 +29,4 @@ class PostId
             throw new InvalidArgumentException('Invalid PostId given');
         }
     }
-    123
 }
