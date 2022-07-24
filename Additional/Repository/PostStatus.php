@@ -2,6 +2,8 @@
 
 namespace DesignPatterns\Additional\Repository;
 
+use InvalidArgumentException;
+
 class PostStatus
 {
     public const STATE_DRAFT_ID = 1;
@@ -20,6 +22,25 @@ class PostStatus
         self::ensureIsValidId($statusId);
 
         return new self($statusId, self::$validStates[$statusId]);
+    }
 
+    public static function fromString(string $status)
+    {
+        self::ensureValidName($status);
+        $state = array_search($status, self::$validStates);
+
+        if ($state === false) {
+            throw new InvalidArgumentException('Invalid state givern');
+        }
+
+        return new self($state, $status);
+    }
+
+    private function __construct(
+        private string $name,
+        private int $id
+    )
+    {
+        
     }
 }
