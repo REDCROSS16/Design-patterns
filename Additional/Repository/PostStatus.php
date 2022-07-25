@@ -40,7 +40,30 @@ class PostStatus
         private string $name,
         private int $id
     )
+    {   
+    }
+
+    public function toInt(): int
     {
-        
+        return $this->id;
+    }
+
+    public function toString(): string
+    {
+        return $this->name;
+    }
+
+    private static function ensureIsValidID(int $status)
+    {
+        if (!in_array($status, array_keys(self::$validStates), true)) { 
+            throw new InvalidArgumentException('Invalid status id is given');
+        }
+    }
+
+    private static function ensureIsValidName(string $status)
+    {
+        if (!in_array($status, self::$validStates)) {
+            throw new InvalidArgumentException('Invalid status name is given');
+        }
     }
 }
